@@ -4,7 +4,7 @@ a:link,a:visited,a{
 }
 .card{
     margin: 0 auto;
-    background: url(/chucknorris.jpeg) no-repeat center;
+    background: url(./chucknorris.jpeg) no-repeat center;
     background-size: cover;
     width:621px ;
     height: 414px;

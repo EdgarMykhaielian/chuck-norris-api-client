@@ -1,17 +1,17 @@
-const url = 'https://api.chucknorris.io/jokes/random';
+const url = 'https://api.chucknorris.io/jokes/';
 const card = document.querySelector(".card")
 const jokePar = document.querySelector(".card__joke");
 const jokeLink = document.querySelector(".card__link");
-const jokeImg = document.querySelector(".card__img");
 const btnNext = document.querySelector("button")
 
 
-getJoke().then(showJoke);
+getJoke(location.hash.slice(1)).then(showJoke);
 
 btnNext.addEventListener('click', () => getJoke().then(showJoke))
 
-function getJoke() {
-    return fetch(url).then(response => response.json());
+function getJoke(id) {
+    return fetch(url + (id || 'random'))
+        .then(response => response.json());
 }
 /* 
 {
@@ -29,6 +29,7 @@ function showJoke(joke) {
     jokePar.innerText = joke.value;
     jokeLink.href = joke.url;
     card.dataset.id = joke.id;
+    location.hash = joke.id;
 }
 
 

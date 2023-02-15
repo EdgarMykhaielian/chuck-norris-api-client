@@ -7,7 +7,7 @@ a:link,a:visited,a{
     background: url(./chucknorris.jpeg) no-repeat center;
     background-size: cover;
     width:621px ;
-    height: 414px;
+    min-height: 414px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
